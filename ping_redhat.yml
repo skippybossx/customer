@@ -1,6 +1,6 @@
 ---
 - name: Ping specific IP address
-  hosts: localhost
+  hosts: hostar
   gather_facts: false
   tasks:
     - name: Ping the IP address
