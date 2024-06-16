@@ -1,11 +1,12 @@
 ---
 - hosts: hostar
+  gather_facts: false
   tasks:
     - name: Execute command
       ansible.builtin.command:
-        cmd: "qm stop {{ redhat_id }} && sleep 5 && qm destroy {{ redhat_id }}"
+        cmd: /bin/bash -c "qm stop {{ redhat_id }} && sleep 5 && qm destroy {{ redhat_id }}"
       register: result
-      failed_when: result.rc != 1
+      failed_when: result.rc != 0
 
     - name: Display output
       ansible.builtin.debug:
