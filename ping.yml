@@ -1,6 +1,6 @@
 ---
 - name: Ping remote hosts
-  hosts: myhosts
+  hosts: hostar
   tasks:
     - name: Ping the host
       ping:
