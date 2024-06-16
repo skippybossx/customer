@@ -1,5 +1,5 @@
 ---
-- hosts: hosts
+- hosts: hostar
   tasks:
     - name: Execute command
       ansible.builtin.command:
