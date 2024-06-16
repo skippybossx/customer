@@ -1,0 +1,8 @@
+---
+- name: Ping specific IP address
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Ping the IP address
+      ping:
+      delegate_to: "158.174.87.156"
