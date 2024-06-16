@@ -3,7 +3,7 @@
   tasks:
     - name: Execute command
       ansible.builtin.command:
-        cmd: qm stop {{ redhat_id }} && sleep 5 && qm destroy {{ redhat_id }}
+        cmd: "qm stop {{ redhat_id }} && sleep 5 && qm destroy {{ redhat_id }}"
       register: result
       failed_when: result.rc != 1
 
