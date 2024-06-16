@@ -1,8 +1,13 @@
 ---
-- name: Ping specific IP address
-  hosts: hostar
+- name: Ping specific IP address from hostar
+  hosts: myhosts
   gather_facts: false
   tasks:
     - name: Ping the IP address
-      ping:
-      delegate_to: "158.174.87.156"
+      ansible.builtin.command:
+        cmd: ping -c 4 158.174.87.156
+      register: ping_output
+
+    - name: Display ping result
+      debug:
+        var: ping_output.stdout
